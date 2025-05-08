@@ -40,26 +40,26 @@ export default function BookingForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const sendEmail = () => {
-    emailjs.send(
-      "your_service_id",     // Replace
-      "your_template_id",    // Replace
-      {
-        name: formData.name,
-        phone: formData.phone,
-        date: formData.date,
-        location: formData.location,
-        eventType: formData.eventType,
-      },
-      "your_public_key"       // Replace
-    )
-      .then(() => {
-        toast.success("Confirmation email sent!");
-      })
-      .catch(() => {
-        toast.error("Email sending failed.");
-      });
-  };
+  // const sendEmail = () => {
+  //   emailjs.send(
+  //     "your_service_id",     // Replace
+  //     "your_template_id",    // Replace
+  //     {
+  //       name: formData.name,
+  //       phone: formData.phone,
+  //       date: formData.date,
+  //       location: formData.location,
+  //       eventType: formData.eventType,
+  //     },
+  //     "your_public_key"       // Replace
+  //   )
+  //     .then(() => {
+  //       toast.success("Confirmation email sent!");
+  //     })
+  //     .catch(() => {
+  //       toast.error("Email sending failed.");
+  //     });
+  // };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
