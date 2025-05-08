@@ -3,7 +3,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 
 type BookingFormData = {
   name: string;
@@ -128,7 +128,7 @@ export default function BookingForm() {
                 <input
                   type={field.type}
                   name={field.name}
-                  value={(formData as any)[field.name]}
+                  value={formData[field.name as keyof BookingFormData]}
                   onChange={handleChange}
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 />
